@@ -13,6 +13,7 @@ iniciar();
 const btn = document.getElementById("boton");
 btn.addEventListener("click", comprobrar);
 
+
 function mostrar(){
     document.getElementById("juego").style.display = "flex";
     document.getElementById("inicio").style.display = "none";
@@ -53,5 +54,58 @@ function comprobrar() {
     }
 }
 
-
+ctx.fillStyle = "#999292"
 ctx.fillRect(0,0,canvas.height,canvas.width);
+
+//base del ahorcado
+ctx.fillStyle = "red";
+ctx.fillRect(0,390,150,120);
+ctx.fillRect(70,100,15,300);
+ctx.fillRect(70,100,150,10);
+ctx.fillRect(210,110,10,50);
+
+function dibujar() {
+    
+        //cabeza
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.arc(210,170,20,0,2*Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        //cuerpo
+        ctx.beginPath();
+        ctx.moveTo(210,190);
+        ctx.lineTo(210,280);
+        ctx.lineWidth = 12;
+        ctx.stroke();
+
+        //brazos
+        ctx.beginPath();
+        ctx.moveTo(210,185);
+        ctx.lineTo(170,270);
+        ctx.lineWidth = 7;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(210,185);
+        ctx.lineTo(250,270);
+        ctx.lineWidth = 7;
+        ctx.stroke();
+
+        //piernas
+        ctx.beginPath();
+        ctx.moveTo(210,270);
+        ctx.lineTo(170,330);
+        ctx.lineWidth = 7;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(210,270);
+        ctx.lineTo(250,330);
+        ctx.lineWidth = 7;
+        ctx.stroke();
+}
+
+dibujar();
+
