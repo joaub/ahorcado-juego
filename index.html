@@ -8,17 +8,19 @@
 </head>
 <body>
     <section id="inicio">
-        <h1>Juego del Ahorcado</h1>
+        <h1 class="titulo">Juego del Ahorcado</h1>
         <button class="boton" onclick="mostrar()">Iniciar Juego</button>
     </section>
     <section id="juego" class="centro">
         <canvas class="canvas" width="500" height="400"></canvas>
-        <div class="palabra" id="palabra"></div>
-        <div class="letra-incorrecta" id="letra-incorrecta"></div> 
-        <label for="guess">Adivina una letra:</label>
-        <input type="text" id="adivina" name="adivina" maxlength="1">
-        <button type="submit" id="boton">¡Adivinar!</button>
-        <div id="vida">las vidas que te quedan son: 6 </div>       
+        <div class="textos">
+            <div class="palabra" id="palabra"></div>
+            <div class="letra-incorrecta" id="letra-incorrecta"></div> 
+            <label for="guess">Adivina una letra:</label>
+            <input type="text" id="adivina" name="adivina" maxlength="1">
+            <button type="submit" id="boton">¡Adivinar!</button>
+            <div id="vida">las vidas que te quedan son: 6 </div>  
+        </div>     
     </section>
     <script src="assets/js/app.js"></script>
 </body>

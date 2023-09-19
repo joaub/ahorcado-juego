@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 const palabra = document.getElementById("palabra");
 
 
-const palabras = ["Barco","Cocina","Boca","River","Agosto","Noviembre"];
+const palabras = ["barco","cocina","boca","river","agosto","noviembre"];
 let palabraSecreta = "";
 let palabraAdivinada = "";
 
@@ -52,6 +52,7 @@ function comprobrar() {
     if(palabraAdivinada.search("_")==-1){
         alert("felicidades ganaste ");
     }
+    dibujar();
 }
 
 ctx.fillStyle = "#999292"
@@ -66,46 +67,56 @@ ctx.fillRect(210,110,10,50);
 
 function dibujar() {
     
-        //cabeza
-        ctx.fillStyle = "#000000";
-        ctx.beginPath();
-        ctx.arc(210,170,20,0,2*Math.PI);
-        ctx.fill();
-        ctx.stroke();
-
+    if(vidas <= 5){
+         //cabeza
+         ctx.fillStyle = "#000000";
+         ctx.beginPath();
+         ctx.arc(210,170,20,0,2*Math.PI);
+         ctx.fill();
+         ctx.stroke();
+    }
+    if(vidas<=4){
         //cuerpo
         ctx.beginPath();
         ctx.moveTo(210,190);
         ctx.lineTo(210,280);
         ctx.lineWidth = 12;
         ctx.stroke();
-
-        //brazos
+    }
+    if(vidas<=3){
+        //brazo
         ctx.beginPath();
         ctx.moveTo(210,185);
         ctx.lineTo(170,270);
         ctx.lineWidth = 7;
         ctx.stroke();
-
+    }
+    if(vidas<=2){
+        //brazo
         ctx.beginPath();
         ctx.moveTo(210,185);
         ctx.lineTo(250,270);
         ctx.lineWidth = 7;
         ctx.stroke();
 
-        //piernas
+    }
+    if(vidas<=1){
+        //pierna
         ctx.beginPath();
         ctx.moveTo(210,270);
         ctx.lineTo(170,330);
         ctx.lineWidth = 7;
         ctx.stroke();
-
+    }
+    if(vidas==0){
+        //pierna
         ctx.beginPath();
         ctx.moveTo(210,270);
         ctx.lineTo(250,330);
         ctx.lineWidth = 7;
         ctx.stroke();
+    }
+        
 }
 
-dibujar();
 

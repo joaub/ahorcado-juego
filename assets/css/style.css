@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #b3dd65;
+}
 #inicio{
     min-height: 100vh;
     display: flex;
@@ -10,17 +13,46 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    /*background: #999292;*/
+   
+}
+.titulo{
+    font-size: 50px;
+    margin: 0.5rem;
+}
+.boton{
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #67aef0;
 }
 
 #juego{
     display: none;
 }
 .centro{
-    
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
+.textos{
+    font-size: 20px;
+}
+.palabra{
+    text-align: center;
+}
+#adivina{
+    height: 25px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: aqua;
+}
+#boton{
+    margin: 0.5rem;
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #5c5ae6;
+}
