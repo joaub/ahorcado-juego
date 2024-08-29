@@ -56,3 +56,23 @@ body{
     border-radius: 10px;
     background-color: #5c5ae6;
 }
+@media only screen and (max-width: 400px) {
+    #inicio{
+        min-height: 150px;
+    }
+    .canvas{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .centro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  @media only screen and (max-width: 200px) {
+    #inicio{
+        min-width: 50px;
+    }
+  }

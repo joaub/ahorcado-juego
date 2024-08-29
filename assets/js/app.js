@@ -39,15 +39,18 @@ function comprobrar() {
             nuevo = nuevo + palabraAdivinada[i*2] + " ";
         }
     }
-    if(nuevo==palabraAdivinada){
+    if(nuevo==palabraAdivinada && vidas > 0){
         vidas--;
         document.getElementById("vida").innerHTML="las vidas que te quedan son: "+ vidas;
+       
+        
     }
     palabraAdivinada = nuevo;
     palabra.innerHTML=palabraAdivinada;
 
-    if(vidas==0){
+    if(vidas==0 ){
         alert("has perdido la palabra secreta era "+palabraSecreta);
+        
     }
     if(palabraAdivinada.search("_")==-1){
         alert("felicidades ganaste ");
@@ -116,6 +119,7 @@ function dibujar() {
         ctx.lineWidth = 7;
         ctx.stroke();
     }
+    
         
 }
 
