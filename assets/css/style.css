@@ -1,78 +1,183 @@
-*{
+/* Reset de márgenes y paddings */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+/* Estilo general de la página */
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #b3dd65;
+    color: #333;
+    min-height: 100vh;
 }
-#inicio{
+
+/* Pantalla de inicio */
+#inicio {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     align-items: center;
-   
+    text-align: center;
+    background: linear-gradient(135deg, #67aef0, #4a86e8);
 }
-.titulo{
-    font-size: 50px;
-    margin: 0.5rem;
+
+/* Estilo del título */
+.titulo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
 }
-.boton{
+
+/* Estilo del botón de inicio */
+.boton {
     height: 50px;
-    width: 150px;
+    width: 200px;
     font-size: 20px;
     border-radius: 10px;
     background-color: #67aef0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#juego{
-    display: none;
+.boton:hover {
+    background-color: #4a86e8;
 }
-.centro{
-    margin: 1rem;
+
+/* Pantalla del juego */
+#juego {
+    display: none;
+    margin-top: 2rem;
+}
+
+/* Estilo para el centro del juego */
+.centro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.textos{
-    font-size: 20px;
-}
-.palabra{
     text-align: center;
+    padding: 20px;
 }
-#adivina{
-    height: 25px;
+
+/* Estilo de los textos */
+.textos {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Palabra adivinada */
+.palabra {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Campo de entrada de letra */
+#adivina {
+    height: 35px;
+    width: 50px;
     border-radius: 15px;
     text-align: center;
-    background-color: aqua;
+    background-color: #e1f5fe;
+    font-size: 1.5rem;
+    border: 2px solid #4a86e8;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
 }
-#boton{
-    margin: 0.5rem;
-    width: 100px;
-    height: 20px;
+
+#adivina:focus {
+    border-color: #67aef0;
+    outline: none;
+}
+
+/* Botón para adivinar */
+#boton {
+    margin: 1rem;
+    width: 120px;
+    height: 40px;
     border-radius: 10px;
     background-color: #5c5ae6;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
 }
-@media only screen and (max-width: 400px) {
-    #inicio{
-        min-height: 150px;
+
+#boton:hover {
+    background-color: #4a86e8;
+}
+
+/* Estilo para el contador de vidas */
+#vida {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #d32f2f;
+}
+
+/* Estilos responsivos */
+@media only screen and (max-width: 768px) {
+    .titulo {
+        font-size: 2.5rem;
     }
-    .canvas{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .boton {
+        width: 180px;
+        height: 45px;
+        font-size: 18px;
     }
-    .centro{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .centro {
+        margin: 1rem;
     }
-  }
-  @media only screen and (max-width: 200px) {
-    #inicio{
-        min-width: 50px;
+    .canvas {
+        width: 100%;
     }
-  }
+}
+
+@media only screen and (max-width: 480px) {
+    .titulo {
+        font-size: 2rem;
+    }
+    .boton {
+        width: 150px;
+        height: 40px;
+    }
+    #adivina {
+        height: 30px;
+        width: 40px;
+        font-size: 1.2rem;
+    }
+    #boton {
+        width: 100px;
+        height: 35px;
+    }
+    #vida {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para dispositivos muy pequeños */
+@media only screen and (max-width: 320px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+    .boton {
+        width: 140px;
+        height: 35px;
+    }
+    #adivina {
+        height: 25px;
+        width: 30px;
+        font-size: 1rem;
+    }
+    #boton {
+        width: 80px;
+        height: 30px;
+    }
+}
